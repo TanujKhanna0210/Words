@@ -24,6 +24,10 @@ import com.example.wordsapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
+    companion object{
+        const val LETTER = "letter"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
         // For example, a View with the id word_one is referenced as binding.wordOne
         val binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val letterId = intent?.extras?.getString("letter").toString()
+        val letterId = intent?.extras?.getString(LETTER).toString()
 
         // Retrieve the LETTER from the Intent extras
         // intent.extras.getString returns String? (String or null)
